@@ -2,7 +2,7 @@ package directory;
 
 import org.junit.Test;
 
-import static directory.dirHandling.getSkinName;
+import static directory.directoryHandlingUnit.getSkinName;
 import static org.junit.Assert.*;
 
 

@@ -271,6 +271,11 @@ public class OHSTP extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        
+        jCheckBox1.setEnabled(false);
+        jCheckBox2.setEnabled(false);
+        jCheckBox3.setEnabled(false);
+        
         String choice = checkForCheckedRDBtns();
         if(choice.equals("")){
             JOptionPane.showMessageDialog(rootPane, "Please select one of the Options.");
@@ -298,11 +303,26 @@ public class OHSTP extends javax.swing.JFrame {
                     Thread.sleep(2000);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(OHSTP.class.getName()).log(Level.SEVERE, null, ex);
-                    JOptionPane.showMessageDialog(rootPane, "An Error Occured " + ex.getMessage(), "Error Alert", JOptionPane.ERROR_MESSAGE);
                 }
                 
                 jLabel3.setText("Preparing 2nd Step: Moving the files.");
                 
+                              
+                jLabel3.setText("Moving files...");
+                
+                try {
+                    directory.directoryHandlingUnit.MoveFiles(srcPath, trgtPath, choice);
+                } catch (IOException ex) {
+                    Logger.getLogger(OHSTP.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+                jCheckBox2.setSelected(true);
+                
+                jCheckBox3.setSelected(true);
+                
+                jLabel3.setText("Transfer has been a success!");
+                
+                JOptionPane.showMessageDialog(rootPane, "The File transfer has been completed! Enjoy a new sound experience! (skill gain has been boosted ++)", "Transfer Complete!", JOptionPane.INFORMATION_MESSAGE);
                 
                 
                 

@@ -1,5 +1,6 @@
 package directory;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 
 import java.io.File;
@@ -7,10 +8,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Scanner;
+import java.util.*;
+
 import static directory.fileParserUnit.readFile;
 import gui.OHSTP;
 import javafx.scene.control.ProgressBar;
@@ -103,11 +102,38 @@ public class directoryHandlingUnit {
             
     }
     
-    public static void MoveFiles(String srcDir , String trgtDir, String choice){
-        
     
+    private static List<File> FindCommonFiles(String srcDir, String trgtDir, String choice) {
+        List<File> srcList = checkValidFiles(srcDir, choice);
+        List<File> trgtList = checkValidFiles(trgtDir, choice);
+        List<File> commList = new ArrayList<>();
+        for (File fileA : srcList) {
+    if (fileA.isFile()) 
+    {
+        for (File fileB : trgtList) {
+             if(fileB.isFile()) 
+             {
+                if(fileA.getName().replaceAll("\\d","").contains(fileB.getName().replaceAll("\\d","")) || fileB.getName().replaceAll("\\d","").contains(fileA.getName().replaceAll("\\d",""))){commList.add(fileA);}
+             }
+         } 
+    }
+}
+        return commList;
+    }
+    
+    public static void MoveFiles(String srcDir , String trgtDir, String choice) throws IOException{
+
+        List<File> commonFiles = FindCommonFiles(srcDir, trgtDir, choice);
+
+        for(File file: commonFiles){
+            FileUtils.copyFile(new File(file.getAbsolutePath()), new File(trgtDir +"/"+ file.getName()));
+            System.out.println("Moved File from: "+file.getAbsolutePath()+" to " + trgtDir +"/"+ file.getName());
+        }
     }
 
+    
+
+       
 
 
 }

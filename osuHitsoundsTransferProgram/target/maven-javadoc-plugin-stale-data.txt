@@ -1,0 +1,61 @@
+@options
+@packages
+-classpath
+'/Users/waougri/.m2/repository/org/openjfx/javafx-controls/19/javafx-controls-19.jar:/Users/waougri/.m2/repository/org/openjfx/javafx-controls/19/javafx-controls-19-mac.jar:/Users/waougri/.m2/repository/org/openjfx/javafx-graphics/19/javafx-graphics-19.jar:/Users/waougri/.m2/repository/org/openjfx/javafx-graphics/19/javafx-graphics-19-mac.jar:/Users/waougri/.m2/repository/org/openjfx/javafx-base/19/javafx-base-19.jar:/Users/waougri/.m2/repository/org/openjfx/javafx-base/19/javafx-base-19-mac.jar:/Users/waougri/.m2/repository/org/openjfx/javafx-fxml/19/javafx-fxml-19.jar:/Users/waougri/.m2/repository/org/openjfx/javafx-fxml/19/javafx-fxml-19-mac.jar:/Users/waougri/.m2/repository/org/kordamp/ikonli/ikonli-javafx/12.3.1/ikonli-javafx-12.3.1.jar:/Users/waougri/.m2/repository/org/kordamp/ikonli/ikonli-core/12.3.1/ikonli-core-12.3.1.jar:/Users/waougri/.m2/repository/commons-io/commons-io/2.7/commons-io-2.7.jar:/Users/waougri/.m2/repository/org/jetbrains/annotations/23.0.0/annotations-23.0.0.jar'
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'/Users/waougri/Desktop/Programming/osuHitsoundsTransferProgram/src/main/java:/Users/waougri/Desktop/Programming/osuHitsoundsTransferProgram/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2022. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/Users/waougri/Desktop/Programming/osuHitsoundsTransferProgram/target/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'osuHitsoundsTransferProgram 0.1 API'
+-linkoffline
+'https://docs.oracle.com/javase/8/docs/api' '/Users/waougri/Desktop/Programming/osuHitsoundsTransferProgram/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'osuHitsoundsTransferProgram 0.1 API'
+directory
+gui
+/Users/waougri/.m2/repository/org/openjfx/javafx-controls/19/javafx-controls-19.jar = 1667412685719
+/Users/waougri/.m2/repository/org/openjfx/javafx-controls/19/javafx-controls-19-mac.jar = 1667412686744
+/Users/waougri/.m2/repository/org/openjfx/javafx-graphics/19/javafx-graphics-19.jar = 1667412685841
+/Users/waougri/.m2/repository/org/openjfx/javafx-graphics/19/javafx-graphics-19-mac.jar = 1667412687459
+/Users/waougri/.m2/repository/org/openjfx/javafx-base/19/javafx-base-19.jar = 1667412685841
+/Users/waougri/.m2/repository/org/openjfx/javafx-base/19/javafx-base-19-mac.jar = 1667412686390
+/Users/waougri/.m2/repository/org/openjfx/javafx-fxml/19/javafx-fxml-19.jar = 1667412688709
+/Users/waougri/.m2/repository/org/openjfx/javafx-fxml/19/javafx-fxml-19-mac.jar = 1667412688712
+/Users/waougri/.m2/repository/org/kordamp/ikonli/ikonli-javafx/12.3.1/ikonli-javafx-12.3.1.jar = 1667412688749
+/Users/waougri/.m2/repository/org/kordamp/ikonli/ikonli-core/12.3.1/ikonli-core-12.3.1.jar = 1667412688753
+/Users/waougri/.m2/repository/commons-io/commons-io/2.7/commons-io-2.7.jar = 1667412689056
+/Users/waougri/.m2/repository/org/jetbrains/annotations/23.0.0/annotations-23.0.0.jar = 1668116986306
+/Users/waougri/Desktop/Programming/osuHitsoundsTransferProgram/src/main/java = 1668280035369
+/Users/waougri/Desktop/Programming/osuHitsoundsTransferProgram/target/generated-sources/annotations = 1668280249293
+/Users/waougri/Desktop/Programming/osuHitsoundsTransferProgram/target/apidocs/constant-values.html = 1668280521465
+/Users/waougri/Desktop/Programming/osuHitsoundsTransferProgram/target/apidocs/tag-search-index.js = 1668280521949
+/Users/waougri/Desktop/Programming/osuHitsoundsTransferProgram/target/apidocs/overview-tree.html = 1668280521816
+/Users/waougri/Desktop/Programming/osuHitsoundsTransferProgram/target/apidocs/module-search-index.js = 1668280521936
+/Users/waougri/Desktop/Programming/osuHitsoundsTransferProgram/target/apidocs/index.html = 1668280521874
+/Users/waougri/Desktop/Programming/osuHitsoundsTransferProgram/target/apidocs/package-search-index.js = 1668280521944
+/Users/waougri/Desktop/Programming/osuHitsoundsTransferProgram/target/apidocs/jquery-ui.overrides.css = 1668280522096
+/Users/waougri/Desktop/Programming/osuHitsoundsTransferProgram/target/apidocs/serialized-form.html = 1668280521718
+/Users/waougri/Desktop/Programming/osuHitsoundsTransferProgram/target/apidocs/index-all.html = 1668280522009
+/Users/waougri/Desktop/Programming/osuHitsoundsTransferProgram/target/apidocs/allpackages-index.html = 1668280521934
+/Users/waougri/Desktop/Programming/osuHitsoundsTransferProgram/target/apidocs/member-search-index.js = 1668280521949
+/Users/waougri/Desktop/Programming/osuHitsoundsTransferProgram/target/apidocs/script.js = 1668280522048
+/Users/waougri/Desktop/Programming/osuHitsoundsTransferProgram/target/apidocs/stylesheet.css = 1668280522046
+/Users/waougri/Desktop/Programming/osuHitsoundsTransferProgram/target/apidocs/overview-summary.html = 1668280522013
+/Users/waougri/Desktop/Programming/osuHitsoundsTransferProgram/target/apidocs/help-doc.html = 1668280522031
+/Users/waougri/Desktop/Programming/osuHitsoundsTransferProgram/target/apidocs/element-list = 1668280521135
+/Users/waougri/Desktop/Programming/osuHitsoundsTransferProgram/target/apidocs/allclasses-index.html = 1668280521931
+/Users/waougri/Desktop/Programming/osuHitsoundsTransferProgram/target/apidocs/type-search-index.js = 1668280521947
+/Users/waougri/Desktop/Programming/osuHitsoundsTransferProgram/target/apidocs/search.js = 1668280522052

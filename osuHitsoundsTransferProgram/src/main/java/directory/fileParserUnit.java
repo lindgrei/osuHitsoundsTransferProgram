@@ -1,11 +1,9 @@
 package directory;
 
-import gui.OHSTP;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -44,7 +42,6 @@ public class fileParserUnit {
     }
 
     public static void WriteToFile(String path, String message) throws IOException {
-        CheckIfFileExists(path);
         try {
             FileWriter myWriter = new FileWriter(path);
             myWriter.write(message);
@@ -55,49 +52,28 @@ public class fileParserUnit {
         }
     }
 
-    public static void CheckIfFileExists(String path) throws IOException {
-        File f = new File(path);
-        f.mkdir();
 
+    public static String CreateTempFiles(String name) throws IOException{
+        ArrayList<String> paths = new ArrayList<>();
+        File f = new File( System.getProperty("user.home") + String.format("/Documents/OHSTP/%s.txt", name ));
+
+        System.out.println(f.getAbsolutePath());
+
+        if (!f.getParentFile().exists()) {
+            f.getParentFile().mkdirs();
+            paths.add(f.getAbsolutePath());
+            System.out.println("creating dirs"+ f.getName());
+        }else {System.out.println("Already Exists" + f.getName());paths.add(f.getAbsolutePath());}
+        if (!f.exists()) {
+            f.createNewFile();
+            System.out.println("Creating file"+ f.getName());
+            paths.add(f.getAbsolutePath());
+        }else {System.out.println("Already Exists" + f.getName());}
+
+
+        return paths.get(0);
     }
 
-    public static void write(String path) {
 
-        InputStream stream = fileParserUnit.class.getResourceAsStream(path);
-        assert stream != null;
-        System.out.println(stream.toString());
-
-    }
-
-    public static void JsonWriter(String path, String key, String value) throws IOException {
-        CheckIfFileExists(path);
-        JSONObject j = new JSONObject();
-        j.put(key, value);
-
-        try (FileWriter file = new FileWriter(path)) {
-            // We can write any JSONArray or JSONObject instance to the file
-            file.write(j.toJSONString());
-            file.flush();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static String JsonReader(String path, String key) {
-        JSONParser jsonParser = new JSONParser();
-
-        try {
-            Object o = jsonParser.parse(new FileReader(path));
-
-            JSONObject j = (JSONObject) o;
-
-            return (String) j.get(key);
-
-        } catch (IOException | ParseException e) {
-            throw new RuntimeException(e);
-        }
-
-    }
 
 }

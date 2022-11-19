@@ -13,3 +13,7 @@ public class dirhandlingtest {
         assertEquals("This should return morg+", getSkinName("/Users/ayman/Downloads/morg+green+skin"), "morg+green+skin" );
     }
 }
+
+
+
+

@@ -23,7 +23,16 @@ public class fileParserUnit {
             System.out.println("An error occurred.");
         }
 
-        return hitsounds;
+    try {
+      File myObj = new File(file.getPath());
+      Scanner myReader = new Scanner(myObj);
+      while (myReader.hasNextLine()) {
+        hitsounds.add(myReader.nextLine());
+      }
+      myReader.close();
+    } catch (FileNotFoundException e) {
+      System.out.println("An error occurred.");
+      e.printStackTrace();
     }
 
     public static String readOneLine(File file) {

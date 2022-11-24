@@ -12,8 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import static directory.fileParserUnit.readFile;
-
 public class directoryHandlingUnit {
     public static String getSkinName(String dir) {
         String[] arr = dir.split("/");
@@ -61,9 +59,37 @@ public class directoryHandlingUnit {
                 break;
         }
 
-
-        return validFiles;
+    for (File file : Objects.requireNonNull(filesList)) {
+      System.out.println(file.getPath());
     }
+
+    while (!choice.equals("e")) {
+      Path result = null;
+      try {
+        for (File file : filesList) {
+          if (checkValidFiles(dir, choice).contains(file)) {
+            result =
+              Files.move(
+                Paths.get(file.getPath()),
+                Paths.get(str_target + file.getName())
+              );
+            System.out.println("Moved " + file.getName() + " to " + str_target);
+          }
+        }
+      } catch (IOException e) {
+        System.out.println("Exception while moving file: " + e.getMessage());
+      }
+      if (result != null) {
+        System.out.println("File moved successfully.");
+      } else {
+        System.out.println("File movement failed.");
+      }
+      System.out.println(
+        "What do you want to transfer too?  hitsounds (h) or interface (i) sound files? or end (e) "
+      );
+      choice = sc.nextLine().toLowerCase().strip();
+    }
+  }
 
     //TODO: fix truncating the files
     
@@ -88,6 +114,23 @@ public class directoryHandlingUnit {
                 audioFiles.add(file);
             }
         }
+      }
+    } else if (choice.equals("interface") || choice.equals("i")) {
+      List<String> interfacee = readFile(
+        new File("src/main/java/directory/interface.txt")
+      );
+      for (File file : Objects.requireNonNull(files)) {
+        if (
+          FilenameUtils.getExtension(String.valueOf(file)).equals("mp3") ||
+          FilenameUtils.getExtension(String.valueOf(file)).equals("ogg") ||
+          FilenameUtils.getExtension(String.valueOf(file)).equals("wav")
+        ) {
+          if (interfacee.contains(getSkinName(file.getName()))) {
+            validFiles.add(file);
+          }
+        }
+      }
+    }
 
          Path result = null;
             try {
